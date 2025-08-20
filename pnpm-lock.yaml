@@ -68,6 +68,9 @@ importers:
       ember-cli-inject-live-reload:
         specifier: ^2.1.0
         version: 2.1.0
+      ember-cli-mirage:
+        specifier: ^3.0.4
+        version: 3.0.4(@ember-data/model@5.6.0)(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(ember-data@5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(ember-inflector@5.0.2(@babel/core@7.28.3))(qunit@2.24.1))(ember-qunit@9.0.3(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(qunit@2.24.1))(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5))(miragejs@0.1.48)(webpack@5.101.3)
       ember-cli-sri:
         specifier: ^2.1.1
         version: 2.1.1
@@ -76,7 +79,7 @@ importers:
         version: 4.0.2
       ember-data:
         specifier: ~5.6.0
-        version: 5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(qunit@2.24.1)
+        version: 5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(ember-inflector@5.0.2(@babel/core@7.28.3))(qunit@2.24.1)
       ember-load-initializers:
         specifier: ^3.0.1
         version: 3.0.1(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
@@ -125,6 +128,9 @@ importers:
       loader.js:
         specifier: ^4.7.0
         version: 4.7.0
+      miragejs:
+        specifier: ^0.1.48
+        version: 0.1.48
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -1025,6 +1031,9 @@ packages:
   '@lint-todo/utils@13.1.1':
     resolution: {integrity: sha512-F5z53uvRIF4dYfFfJP3a2Cqg+4P1dgJchJsFnsZE0eZp0LK8X7g2J0CsJHRgns+skpXOlM7n5vFGwkWCWj8qJg==}
     engines: {node: 12.* || >= 14}
+
+  '@miragejs/pretender-node-polyfill@0.1.2':
+    resolution: {integrity: sha512-M/BexG/p05C5lFfMunxo/QcgIJnMT2vDVCd00wNqK2ImZONIlEETZwWJu1QtLxtmYlSHlCFl3JNzp0tLe7OJ5g==}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
@@ -2420,6 +2429,26 @@ packages:
   ember-cli-is-package-missing@1.0.0:
     resolution: {integrity: sha512-9hEoZj6Au5onlSDdcoBqYEPT8ehlYntZPxH8pBKV0GO7LNel88otSAQsCfXvbi2eKE+MaSeLG/gNaCI5UdWm9g==}
 
+  ember-cli-mirage@3.0.4:
+    resolution: {integrity: sha512-JpfZJIrvUAcwOVQ44aAzlYSbGiO4/nqnVAbzAKU4kztqgYvYGBa27FX5WxfpIGZMBdnt6OKh78rsimChWo6f/Q==}
+    engines: {node: 16.* || >= 18}
+    peerDependencies:
+      '@ember-data/model': '*'
+      '@ember/test-helpers': '*'
+      ember-data: '*'
+      ember-qunit: '*'
+      ember-source: '>= 3.28.0'
+      miragejs: ^0.1.43
+    peerDependenciesMeta:
+      '@ember-data/model':
+        optional: true
+      '@ember/test-helpers':
+        optional: true
+      ember-data:
+        optional: true
+      ember-qunit:
+        optional: true
+
   ember-cli-normalize-entity-name@1.0.0:
     resolution: {integrity: sha512-rF4P1rW2P1gVX1ynZYPmuIf7TnAFDiJmIUFI1Xz16VYykUAyiOCme0Y22LeZq8rTzwBMiwBwoE3RO4GYWehXZA==}
 
@@ -2485,6 +2514,13 @@ packages:
     peerDependenciesMeta:
       '@typescript-eslint/parser':
         optional: true
+
+  ember-get-config@2.1.1:
+    resolution: {integrity: sha512-uNmv1cPG/4qsac8oIf5txJ2FZ8p88LEpG4P3dNcjsJS98Y8hd0GPMFwVqpnzI78Lz7VYRGQWY4jnE4qm5R3j4g==}
+    engines: {node: 12.* || 14.* || >= 16}
+
+  ember-inflector@5.0.2:
+    resolution: {integrity: sha512-aoPaT7B3pbUHSi4ulf02iRaMMvPteuDBO8jA1SLLOl/JwnO2YI5F/MhNPaolxp8DWwAd/P6MNN+wD5bLwmiUIA==}
 
   ember-load-initializers@3.0.1:
     resolution: {integrity: sha512-qV3vxJKw5+7TVDdtdLPy8PhVsh58MlK8jwzqh5xeOwJPNP7o0+BlhvwoIlLYTPzGaHdfjEIFCgVSyMRGd74E1g==}
@@ -2824,6 +2860,9 @@ packages:
   extract-stack@2.0.0:
     resolution: {integrity: sha512-AEo4zm+TenK7zQorGK1f9mJ8L14hnTDi2ZQPR+Mub1NX8zimka1mXpV5LpH8x9HoUmFSHZCfLHqWvp0Y4FxxzQ==}
     engines: {node: '>=8'}
+
+  fake-xml-http-request@2.1.2:
+    resolution: {integrity: sha512-HaFMBi7r+oEC9iJNpc3bvcW7Z7iLmM26hPDmlb0mFwyANSsOQAtJxbdWsXITKOzZUyMYK0zYCv3h5yDj9TsiXg==}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -3349,6 +3388,9 @@ packages:
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
+
+  inflected@2.1.0:
+    resolution: {integrity: sha512-hAEKNxvHf2Iq3H60oMBHkB4wl5jn3TPF3+fXek/sRwAB5gP9xWs4r7aweSF95f99HFoz69pnZTcu8f0SIHV18w==}
 
   inflection@2.0.1:
     resolution: {integrity: sha512-wzkZHqpb4eGrOKBl34xy3umnYHx8Si5R1U4fwmdxLo5gdH6mEK8gclckTj/qWqy4Je0bsDYe/qazZYuO7xe3XQ==}
@@ -4000,6 +4042,10 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  miragejs@0.1.48:
+    resolution: {integrity: sha512-MGZAq0Q3OuRYgZKvlB69z4gLN4G3PvgC4A2zhkCXCXrLD5wm2cCnwNB59xOBVA+srZ0zEes6u+VylcPIkB4SqA==}
+    engines: {node: 6.* || 8.* || >= 10.*}
+
   mixin-deep@1.3.2:
     resolution: {integrity: sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==}
     engines: {node: '>=0.10.0'}
@@ -4420,6 +4466,9 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  pretender@3.4.7:
+    resolution: {integrity: sha512-jkPAvt1BfRi0RKamweJdEcnjkeu7Es8yix3bJ+KgBC5VpG/Ln4JE3hYN6vJym4qprm8Xo5adhWpm3HCoft1dOw==}
 
   prettier-plugin-ember-template-tag@2.1.0:
     resolution: {integrity: sha512-Ium+m2zHSZKzRFt1Shn+sv8j1BzfFWP3E0tZeKTKP1U7v/tMyLuQNBRyRCJ7REdKc9bWkIJG/hCSf0CKqCVU1w==}
@@ -6349,10 +6398,10 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  '@ember-data/debug@5.6.0(@ember-data/model@5.6.0)(@ember-data/request-utils@5.6.0)(@ember-data/store@5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1))(@warp-drive/core-types@5.6.0)':
+  '@ember-data/debug@5.6.0(@ember-data/model@5.6.0)(@ember-data/request-utils@5.6.0(ember-inflector@5.0.2(@babel/core@7.28.3)))(@ember-data/store@5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1))(@warp-drive/core-types@5.6.0)':
     dependencies:
       '@ember-data/model': 5.6.0
-      '@ember-data/request-utils': 5.6.0
+      '@ember-data/request-utils': 5.6.0(ember-inflector@5.0.2(@babel/core@7.28.3))
       '@ember-data/store': 5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1)
       '@ember/edition-utils': 1.2.0
       '@embroider/macros': 1.18.1
@@ -6404,11 +6453,13 @@ snapshots:
       - '@glint/template'
       - supports-color
 
-  '@ember-data/request-utils@5.6.0':
+  '@ember-data/request-utils@5.6.0(ember-inflector@5.0.2(@babel/core@7.28.3))':
     dependencies:
       '@embroider/macros': 1.18.1
       '@warp-drive/core': 5.6.0
       '@warp-drive/utilities': 5.6.0(@warp-drive/core@5.6.0)
+    optionalDependencies:
+      ember-inflector: 5.0.2(@babel/core@7.28.3)
     transitivePeerDependencies:
       - '@glint/template'
       - supports-color
@@ -6811,6 +6862,8 @@ snapshots:
       slash: 3.0.0
       tslib: 2.8.1
       upath: 2.0.1
+
+  '@miragejs/pretender-node-polyfill@0.1.2': {}
 
   '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
     dependencies:
@@ -8513,6 +8566,29 @@ snapshots:
 
   ember-cli-is-package-missing@1.0.0: {}
 
+  ember-cli-mirage@3.0.4(@ember-data/model@5.6.0)(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(ember-data@5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(ember-inflector@5.0.2(@babel/core@7.28.3))(qunit@2.24.1))(ember-qunit@9.0.3(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(qunit@2.24.1))(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5))(miragejs@0.1.48)(webpack@5.101.3):
+    dependencies:
+      '@babel/core': 7.28.3
+      '@embroider/macros': 1.18.1
+      broccoli-file-creator: 2.1.1
+      broccoli-funnel: 3.0.8
+      broccoli-merge-trees: 4.2.0
+      ember-auto-import: 2.10.0(webpack@5.101.3)
+      ember-cli-babel: 8.2.0(@babel/core@7.28.3)
+      ember-get-config: 2.1.1
+      ember-inflector: 5.0.2(@babel/core@7.28.3)
+      ember-source: 6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
+      miragejs: 0.1.48
+    optionalDependencies:
+      '@ember-data/model': 5.6.0
+      '@ember/test-helpers': 5.2.2(@babel/core@7.28.3)
+      ember-data: 5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(ember-inflector@5.0.2(@babel/core@7.28.3))(qunit@2.24.1)
+      ember-qunit: 9.0.3(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(qunit@2.24.1)
+    transitivePeerDependencies:
+      - '@glint/template'
+      - supports-color
+      - webpack
+
   ember-cli-normalize-entity-name@1.0.0:
     dependencies:
       silent-error: 1.1.1
@@ -8715,16 +8791,16 @@ snapshots:
       - walrus
       - whiskers
 
-  ember-data@5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(qunit@2.24.1):
+  ember-data@5.6.0(@ember/test-helpers@5.2.2(@babel/core@7.28.3))(@ember/test-waiters@4.1.1)(ember-inflector@5.0.2(@babel/core@7.28.3))(qunit@2.24.1):
     dependencies:
       '@ember-data/adapter': 5.6.0
-      '@ember-data/debug': 5.6.0(@ember-data/model@5.6.0)(@ember-data/request-utils@5.6.0)(@ember-data/store@5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1))(@warp-drive/core-types@5.6.0)
+      '@ember-data/debug': 5.6.0(@ember-data/model@5.6.0)(@ember-data/request-utils@5.6.0(ember-inflector@5.0.2(@babel/core@7.28.3)))(@ember-data/store@5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1))(@warp-drive/core-types@5.6.0)
       '@ember-data/graph': 5.6.0
       '@ember-data/json-api': 5.6.0
       '@ember-data/legacy-compat': 5.6.0
       '@ember-data/model': 5.6.0
       '@ember-data/request': 5.6.0
-      '@ember-data/request-utils': 5.6.0
+      '@ember-data/request-utils': 5.6.0(ember-inflector@5.0.2(@babel/core@7.28.3))
       '@ember-data/serializer': 5.6.0
       '@ember-data/store': 5.6.0(@ember-data/tracking@5.6.0(@ember/test-waiters@4.1.1))(@ember/test-waiters@4.1.1)
       '@ember-data/tracking': 5.6.0(@ember/test-waiters@4.1.1)
@@ -8760,6 +8836,22 @@ snapshots:
     transitivePeerDependencies:
       - eslint
       - typescript
+
+  ember-get-config@2.1.1:
+    dependencies:
+      '@embroider/macros': 1.18.1
+      ember-cli-babel: 7.26.11
+    transitivePeerDependencies:
+      - '@glint/template'
+      - supports-color
+
+  ember-inflector@5.0.2(@babel/core@7.28.3):
+    dependencies:
+      '@embroider/addon-shim': 1.10.0
+      decorator-transforms: 2.3.0(@babel/core@7.28.3)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - supports-color
 
   ember-load-initializers@3.0.1(ember-source@6.6.0(@glimmer/component@2.0.0)(rsvp@4.8.5)):
     dependencies:
@@ -9345,6 +9437,8 @@ snapshots:
       - supports-color
 
   extract-stack@2.0.0: {}
+
+  fake-xml-http-request@2.1.2: {}
 
   fast-deep-equal@3.1.3: {}
 
@@ -9996,6 +10090,8 @@ snapshots:
 
   imurmurhash@0.1.4: {}
 
+  inflected@2.1.0: {}
+
   inflection@2.0.1: {}
 
   inflection@3.0.2: {}
@@ -10643,6 +10739,13 @@ snapshots:
 
   minipass@7.1.2: {}
 
+  miragejs@0.1.48:
+    dependencies:
+      '@miragejs/pretender-node-polyfill': 0.1.2
+      inflected: 2.1.0
+      lodash: 4.17.21
+      pretender: 3.4.7
+
   mixin-deep@1.3.2:
     dependencies:
       for-in: 1.0.2
@@ -11031,6 +11134,11 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  pretender@3.4.7:
+    dependencies:
+      fake-xml-http-request: 2.1.2
+      route-recognizer: 0.3.4
 
   prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2):
     dependencies:

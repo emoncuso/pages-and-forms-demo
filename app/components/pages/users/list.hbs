@@ -1,0 +1,42 @@
+<header class="flex-row_between">
+  <h1> Users </h1>
+
+  <LinkTo @route="users.create">Create user</LinkTo>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>favorite color</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @model.users as |user|}}
+      <tr>
+        <td>
+          <LinkTo 
+            @route="users.user"
+            @model={{user.id}}
+          >
+            {{user.id}}
+          </LinkTo>
+        </td>
+        <td>{{user.name}}</td>
+        <td>
+          {{user.favoriteColor}} 
+          <div 
+            style={{
+              concat
+              "height: 20px; width: 20px; background-color:"
+              user.favoriteColor
+              ";"
+            }}
+          >
+          </div>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

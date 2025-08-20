@@ -1,0 +1,16 @@
+<h1>User: {{@model.user.name}} </h1>
+
+<hr />
+
+<form method="POST" {{on "submit" this.handleSubmit}}>
+  <div>
+    {{!-- individual, reusable components only need to represent their parts of the form --}}
+    {{!-- since we're relying on HTML and plain JS, we don't need to worry about passing update functions, only values --}}
+    <Users::Create::Info @name={{@model.user.name}} />
+    <Users::Create::Colors @favoriteColor={{@model.user.favoriteColor}} />
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+    <LinkTo @route="users.list">Cancel</LinkTo>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<h1>Create user</h1>
+
+<hr />
+
+<form method="POST" {{on "submit" this.handleSubmit}}>
+  <div>
+    <Users::Create::Info @name="" />
+    <Users::Create::Colors @favoriteColor="" />
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+    <LinkTo @route="users.list">Cancel</LinkTo>
+  </div>
+</form>
