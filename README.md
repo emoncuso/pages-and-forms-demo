@@ -1,57 +1,24 @@
-# pages-and-forms-demo
+# Pages and forms demo
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Example repo with page component and nested form examples
 
-## Prerequisites
+## Getting started
 
-You will need the following things properly installed on your computer.
+```sh
+pnpm install
+pnpm dev
+```
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/)
-- [pnpm](https://pnpm.io/)
-- [Ember CLI](https://cli.emberjs.com/release/)
-- [Google Chrome](https://google.com/chrome/)
+Navigate to [http://localhost:4200](http://localhost:4200)
 
-## Installation
+## Pieces
 
-- `git clone <repository-url>` this repository
-- `cd pages-and-forms-demo`
-- `pnpm install`
+### Pages
 
-## Running / Development
+In this repo, ember routes are responsible for loading data in their model hooks. Nothing else happens in the route. Rendering, user interaction, and any synthesis of properties (i.e. output of `getters`) happens in the components.
 
-- `pnpm start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+### Nested forms
 
-### Code Generators
+This demo uses plain HTML and JS forms to handle data submission. Since the form only cares about the _end result_ of rendering, you can nest the form elements in child components without the need to pass update functions around. 
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-- `pnpm test`
-- `pnpm test:ember --server`
-
-### Linting
-
-- `pnpm lint`
-- `pnpm lint:fix`
-
-### Building
-
-- `pnpm ember build` (development)
-- `pnpm build` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-- [ember.js](https://emberjs.com/)
-- [ember-cli](https://cli.emberjs.com/release/)
-- Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+There are limitations to this pattern (i.e. it's harder to validate changes centrally) but this lets for some powerful composition of forms without a ton of extra JS and Ember code to support it. See the user [create](./app/components/pages/users/create.js)/[update](./app/components/pages/users/update.js) page components for more specifics
